@@ -4,15 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>| TO-DO | by Ramiro</title>
+    <link rel="icon" type="image/x-icon" href="icons/favicon.png">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1 class="TitleMain">TO-DO LISTE</h1>
+    <div class="todo-app">
+        <h2>To-Do Liste</h2>
+        <!-- Searchbar & Barometer -->
+        <div class="search-container">
+            <input type="text" id="search" placeholder="Suchen Sie ein To-Do">
+            <button id="search-button">Suchen</button>
+            <button id="add-todo-button">+</button>
+        </div>
+        <div class="barometer">
+            <div class="barometer-fill" id="barometer-fill"></div>
+        </div>
+        <ul id="todo-list">
+            <!-- To-Do's will appear here -->
+        </ul>
+    </div>
 
-    <form action="" class="search">
-        <input type="text" class="searchbar" placeholder="Suchen sie " name="search">
-        <button type="submit" class="searchbutton">Suchen</button>
-        
-      </form>
+     <!-- Add/Edit To-Do Window-->
+    <div id="todo-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h3 id="modal-title">To-Do hinzufügen / Bearbeiten</h3>
+            <!-- Error Message -->
+            <p id="error-message" class="error-message"></p> 
+            <input type="text" id="todo-name" placeholder="Name" maxlength="255">
+            <input type="text" id="todo-description" placeholder="Beschreibung">
+            <input type="text" id="todo-author" placeholder="Autor" maxlength="20">
+            <select id="todo-category">
+                <option value="Sport">Sport</option>
+                <option value="Reisen">Reisen</option>
+                <option value="Haushalt">Haushalt</option>
+                <option value="Arbeit">Arbeit</option>
+                <option value="Freizeit">Freizeit</option>
+            </select>
+            <label>
+                Wichtig:
+                <input type="checkbox" id="todo-important">
+            </label>
+            <label>
+                Dringend:
+                <input type="checkbox" id="todo-urgent">
+            </label>
+            <div class="date-container">
+                <input type="date" id="start-date" placeholder="Start">
+                <span>→</span>
+                <input type="date" id="end-date" placeholder="Ende">
+            </div>
+            <button id="save-todo-button">Speichern</button>
+        </div>
+    </div>
+
+    <!-- To-Do Details Window -->
+    <div id="todo-details-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h3 id="details-title">To-Do Details</h3> <!-- Hier wird der Titel aktualisiert -->
+            <p>Titel: <span id="details-title-name"></span></p>
+            <p>Beschreibung: <span id="details-description"></span></p>
+            <p>Autor: <span id="details-author"></span></p>
+            <p>Kategorie: <span id="details-category"></span></p>
+            <p>Wichtig: <span id="details-important"></span></p>
+            <p>Dringend: <span id="details-urgent"></span></p>
+            <p>Startdatum: <span id="details-start-date"></span> → Enddatum: <span id="details-end-date"></span></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
