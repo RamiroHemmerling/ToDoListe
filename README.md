@@ -1,8 +1,8 @@
-# To-Do Liste 
+# To-Do List
 - ## Built with
 <img src="https://skillicons.dev/icons?i=js,html,css"/>
 
 - ## Functions
-  - To-Do's auf der Main-Page suchen und sortieren.
-  - To-Do's mit allen Daten hinzufügen und bearbeiten.
-  - To-Do's Löschen.
+ - To-do's are automatically sorted and can be searched.
+  - To-do's can be added and all information can be edited.
+  - To-do's can be deleted.
